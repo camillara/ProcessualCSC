@@ -17,12 +17,14 @@ public class Main {
 			catch(IllegalArgumentException e) {
 				System.err.println(e.getMessage());				
 			}
+			sair=-1;
 			while (sair != 1 && sair != 0) {
 				System.out.print("Selecione: [ 1 - Continuar ] [ 0 - Sair ] =>");
 				sair = leia.nextInt();
 			}
 			System.out.println();
 		}
+		System.out.print("Sistema encerrado com sucesso!");
 		leia.close();
 	}
 
