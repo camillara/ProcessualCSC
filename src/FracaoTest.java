@@ -1,44 +1,67 @@
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
+
 public class FracaoTest {
+	
+	Fracao teste;
+	Fracao teste_;
+	String testeString;
 
 	@Test
 	public void test1() {
-		Fracao teste1 = new Fracao(10, 2);
-		assertEquals(5, teste1.divisao(), 0.0001);
+		teste = new Fracao(10, 2);
+		assertEquals(5, teste.divisao(), 0.0001);
 	}
 
 	@Test
 	public void test2() {
-		Fracao teste2 = new Fracao(-10, 2);
-		assertEquals(-5, teste2.divisao(), 0.0001);
+		teste = new Fracao(-10, 2);
+		assertEquals(-5, teste.divisao(), 0.0001);
 	}
 
 	@Test
 	public void test3() {
-		Fracao teste3 = new Fracao(5, 2);
-		assertEquals(2.5, teste3.divisao(), 0.0001);
+		teste = new Fracao(5, 2);
+		assertEquals(2.5, teste.divisao(), 0.0001);
 	}
 
 	@Test
 	public void test4() {
-		Fracao teste4 = new Fracao(5, -2);
-		assertEquals(-2.5, teste4.divisao(), 0.0001);
+		teste = new Fracao(5, -2);
+		assertEquals(-2.5, teste.divisao(), 0.0001);
 	}
 
 	@Test
 	public void test5() {
-		Fracao teste5 = new Fracao(-5, -2);
-		assertEquals(2.5, teste5.divisao(), 0.0001);
+		teste = new Fracao(-5, -2);
+		assertEquals(2.5, teste.divisao(), 0.0001);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void test6() {
-		Fracao teste6 = new Fracao(-5, 0);
-		teste6.divisao();
+		teste = new Fracao(-5, 0);
+		teste.divisao();
 	}
+		
+	@Test
+	public void test7() {
+		testeString = "50.0/-8.0";
+		teste = new Fracao(10, -2);
+		teste_ = new Fracao(5, 4);	
+		assertTrue(testeString.equals(teste.multiplicação(teste, teste_)), teste.multiplicação(teste, teste_));
+	}
+	
+	@Test
+	public void test8() {
+		testeString = "15.0/10.0";
+		teste = new Fracao(3, 5);
+		teste_ = new Fracao(5, 2);	
+		assertTrue(testeString.equals(teste.multiplicação(teste, teste_)), teste.multiplicação(teste, teste_));
+	}
+
+	
 
 }
