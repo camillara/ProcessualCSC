@@ -23,10 +23,8 @@ public class Fracao {
 		return (double) NUMERADOR / DENOMINADOR;
 	}
 
-	public String multiplicação(Fracao f1, Fracao f2) {
-		double numerador = f1.getNUMERADOR() * f2.getNUMERADOR();
-		double denominador = f1.getDENOMINADOR() * f2.getDENOMINADOR();
-		return numerador + "/" + denominador;
+	public Double multiplicação(Fracao f1, Fracao f2) {
+		return (double) (f1.getNUMERADOR() * f2.getNUMERADOR())/(f1.getDENOMINADOR() * f2.getDENOMINADOR());
 	}
 
 }
